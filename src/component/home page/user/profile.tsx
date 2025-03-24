@@ -27,7 +27,7 @@ const UserProfile: React.FC = () => {
         }
         const decodedToken = JSON.parse(atob(token.split('.')[1]));
         const userId = decodedToken.userId;
-        const response = await axios.get(`http://localhost:3000/api/users/user/${userId}`, {
+        const response = await axios.get(`${import.meta.env.VITE_LOGIN_PATH}/api/users/user/${userId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 

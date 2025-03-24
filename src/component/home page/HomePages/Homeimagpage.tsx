@@ -1,4 +1,3 @@
-import React from "react";
 import { FaChair, FaComments } from "react-icons/fa";
 import { SiGroupon } from "react-icons/si";
 import { motion } from "framer-motion";
