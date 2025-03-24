@@ -19,11 +19,8 @@ function Adminbooking() {
   useEffect(() => {
     const fetchBookings = async () => {
         try {
-          
-const response = await axios.get(`${import.meta.env.VITE_LOGIN_PATH}/api/bookings/booking`);
-const data = response.data;
-console.log(data);
-
+          const response = await axios.get(`${import.meta.env.VITE_LOGIN_PATH}/api/bookings/booking`);
+      
           // Filter out confirmed bookings
           const filteredBookings = response.data.filter((booking: Booking) => booking.type !== "confirm");
       
@@ -43,7 +40,7 @@ console.log(data);
   const confirmBooking = async (_id: string) => {
     try {
         // Make a request to confirm the booking (API call to update the booking type)
-        const response = await axios.put(`${import.meta.env.VITE_LOGIN_PATH}/api/bookings/booking/confirm/${_id}`);
+        await axios.put(`${import.meta.env.VITE_LOGIN_PATH}/api/bookings/booking/confirm/${_id}`);
     
         // Once confirmed, update the local state to reflect the booking with type = 'confirm'
         setBookings(bookings.map((booking) => 
