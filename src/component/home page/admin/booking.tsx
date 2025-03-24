@@ -19,8 +19,11 @@ function Adminbooking() {
   useEffect(() => {
     const fetchBookings = async () => {
         try {
-          const response = await axios.get(`${import.meta.env.VITE_LOGIN_PATH}/api/bookings/booking`);
-           console.log(response.data);
+          
+const response = await axios.get(`${import.meta.env.VITE_LOGIN_PATH}/api/bookings/booking`);
+const data = response.data;
+console.log(data);
+
           // Filter out confirmed bookings
           const filteredBookings = response.data.filter((booking: Booking) => booking.type !== "confirm");
       
