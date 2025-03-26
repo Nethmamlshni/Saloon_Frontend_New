@@ -1,10 +1,13 @@
 import { FaChair, FaComments } from "react-icons/fa";
 import { SiGroupon } from "react-icons/si";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const HomeimagePage: React.FC = () => {
+
+  const navigate = useNavigate();
     const HandleChangeBook = () => {
-        window.location.href = "/booking";
+      navigate("/booking");
     }
       // Define the animation variants
       const headerVariants = {
@@ -18,13 +21,13 @@ const HomeimagePage: React.FC = () => {
       };
 
     const HandleChangePrice = () => {
-        window.location.href = "/pricelist";
+        navigate("/pricelist");
     }
     const HandleChangeServices = () => {
-        window.location.href = "/services";
+        navigate("/services");
     }
     const HandleChangeInfo = () => {
-        window.location.href = "/workers";
+       navigate("/workers");
     }
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white p-4">
