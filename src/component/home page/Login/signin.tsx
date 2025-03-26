@@ -47,7 +47,7 @@ function Signin({ onSuccess }: SigninProps) {
       alert("Login successful. Welcome!");
 
       localStorage.setItem("token", response.data.token);
-      if (email === "dasunpramuditha2003@gmail.com") {
+      if (email === `${import.meta.env.VITE_EMAIL_ADMIN}`) {
         navigate("/adminhome");
     } else {
         onSuccess();
