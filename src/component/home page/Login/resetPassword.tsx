@@ -50,7 +50,7 @@ function ResetPassword() {
 
         <h2 className="text-2xl font-bold  text-black mt-6 mb-4">Reset Password</h2>
 
-        {message && <p className="text-red-500 mb-3">{message}</p>}
+        {message && <p className="text-black mb-3">{message}</p>}
 
         <form onSubmit={handleSubmit}>
           <input
